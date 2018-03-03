@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition>
+    <section class="book-summary">
+        <h:graphicImage library="images" name="#{b.imgName}.jpg" alt="#{b.name}"/>
+        <h2>#{b.name}</h2>
+        <ui:insert name="book-description">
+            <p>Book description.</p>
+        </ui:insert>
+    </section>
+</ui:composition>
+</html>

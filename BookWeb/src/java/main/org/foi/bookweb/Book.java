@@ -4,13 +4,15 @@ public class Book {
     private String name;
     private int numberOfPages;
     private String author;
+    private String imgName;
 
     public Book(){}
 
-    public Book(String name, int numberOfPages, String author){
+    public Book(String name, int numberOfPages, String author, String imgName){
         this.name = name;
         this.numberOfPages = numberOfPages;
         this.author = author;
+        this.imgName = imgName;
     }
 
     public String getName() {
@@ -35,5 +37,13 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getImgName() {
+        return imgName;
+    }
+
+    public void setImgName(String imgName) {
+        this.imgName = imgName;
     }
 }

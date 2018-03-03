@@ -11,9 +11,17 @@
          <p>Harry Potter books:</p>
       </section>
       <section class="main_content">
-         <p>#{bookService.myBook.name}</p>
-         <p>#{bookService.myBook.author}</p>
-         <p>#{bookService.myBook.numberOfPages}</p>
+          <h:form>
+              <ui:repeat value="#{bookService.allMyBooks}" var="b">
+                  <ui:decorate template="book_template.xhtml">
+                      <ui:param name="b" value="#{b}"/>
+                      <ui:define name="book-description">
+                          <p>Author: #{b.author}</p>
+                          <p>Pages: #{b.numberOfPages}</p>
+                      </ui:define>
+                  </ui:decorate>
+              </ui:repeat>
+          </h:form>
       </section>
    </ui:define>
 </ui:composition>
