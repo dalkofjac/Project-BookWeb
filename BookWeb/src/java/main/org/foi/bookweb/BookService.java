@@ -18,12 +18,7 @@ public class BookService {
 
     @PostConstruct
     public void init(){
-        myBook = bookInterface.getTheBook();
         allMyBooks = bookInterface.getAllBooks();
-    }
-
-    public Book getMyBook(){
-        return myBook;
     }
 
     public ArrayList<Book> getAllMyBooks(){

@@ -11,6 +11,12 @@
         <ui:insert name="book-description">
             <p>Book description.</p>
         </ui:insert>
+        <p>
+            <h:outputLink value="book_details.xhtml">
+                <f:param name="bookId" value="#{b.id}"/>
+                <p>Book Details</p>
+            </h:outputLink>
+        </p>
     </section>
 </ui:composition>
 </html>
