@@ -79,3 +79,9 @@ body > footer > p {
     float: left;
     padding-right: 1em;
 }
+.book_details_pic > img{
+    height: 300px;
+    width: 200px;
+    float: left;
+    padding-right: 1em;
+}

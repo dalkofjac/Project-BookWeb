@@ -39,6 +39,16 @@ public class BookGetter implements BookInterface {
                 "J.K.Rowling", "hp_fifth", "With their warning about Lord Voldemort's return " +
                 "scoffed at, Harry and Dumbledore are targeted by the Wizard authorities as an authoritarian " +
                 "bureaucrat slowly seizes power at Hogwarts."));
+        bookList.add(new Book(6, "Harry Potter and the Half-Blood Prince", 700,
+                "J.K.Rowling", "hp_sixth", "As Harry Potter begins his sixth year at Hogwarts, " +
+                "he discovers an old book marked as \"the property of the Half-Blood Prince\" and begins to learn " +
+                "more about Lord Voldemort's dark past."));
+        bookList.add(new Book(7, "Harry Potter and the Deathly Hallows", 560,
+                "J.K.Rowling", "hp_seventh", "As Harry races against time and evil to destroy " +
+                "the Horcruxes, he uncovers the existence of three most powerful objects in the wizarding world: " +
+                "the Deathly Hallows. Also, Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes " +
+                "in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts."));
+
     }
 
     @Override
