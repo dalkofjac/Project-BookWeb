@@ -1,13 +1,15 @@
 package main.org.foi.bookweb;
 
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
 
 
 @Named
-@RequestScoped
-public class BookDetails {
+@SessionScoped
+public class BookDetails implements Serializable {
     @Inject
     private BookInterface bookInterface;
 

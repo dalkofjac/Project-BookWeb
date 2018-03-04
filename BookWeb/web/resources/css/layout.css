@@ -80,8 +80,27 @@ body > footer > p {
     padding-right: 1em;
 }
 .book_details_pic > img{
-    height: 300px;
-    width: 200px;
+    height: 280px;
+    width: 190px;
     float: left;
     padding-right: 1em;
+}
+.add_comment{
+    padding: 1em;
+    clear: both;
+    background: darkseagreen;
+}
+
+.user_review{
+    margin-top: 3em;
+    text-align: left;
+}
+
+#write_comment{
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+#pre_main_lower{
+    font-size: medium;
 }

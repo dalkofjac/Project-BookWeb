@@ -7,18 +7,52 @@
 <ui:composition template="page_template.xhtml">
     <f:metadata>
         <f:viewParam name="bookId" value="#{bookDetails.bookId}"/>
+        <f:viewParam name="bookId" value="#{commentService.bookId}"/>
         <f:viewAction action="#{bookDetails.loadTheBook}"/>
+        <f:viewAction action="#{commentService.loadTheBook}"/>
+        <f:viewAction action="#{commentService.loadRealList}"/>
     </f:metadata>
     <ui:define name="main_content" >
         <section class="pre_main">
             <p>#{bookDetails.myBook.name}</p>
+            <p id="pre_main_lower">#{bookDetails.myBook.author}</p>
         </section>
         <section class="main_content">
             <div class="book_details_pic">
                 <h:graphicImage library="images" name="#{bookDetails.myBook.imgName}.jpg"
                                 alt="#{bookDetails.myBook.name}"/>
             </div>
-            <p>#{bookDetails.myBook.desc}</p>
+            <div class="book_desc">
+                <p>#{bookDetails.myBook.desc}</p>
+            </div>
+            <div class="user_review">
+                <p> <strong> User reviews: </strong></p>
+                <ui:fragment rendered="#{not empty commentService.allComments}">
+                    <ui:repeat value="#{commentService.allComments}" var="com">
+                        <p><strong>#{com.user.userName}</strong> said the following:</p>
+                        <p>#{com.commentText}</p>
+                    </ui:repeat>
+                </ui:fragment>
+                <ui:fragment rendered="#{empty commentService.allComments}">
+                    <p>No user reviews so far.</p>
+                </ui:fragment>
+            </div>
+        </section>
+        <section class="add_comment">
+            <p id="write_comment"> Write comment about this book: </p>
+            <h:form id="commentForm">
+                <h:panelGrid columns="2" styleClass="form-grid"
+                             columnClasses="form-column-label,form-column-input">
+                    <h:outputLabel for="userName">Your name: </h:outputLabel>
+                    <h:inputText id="userName" value="#{commentService.myComment.user.userName}" size="20"/>
+
+                    <h:outputLabel for="comment">Your comment: </h:outputLabel>
+                    <h:inputTextarea id="comment" value="#{commentService.myComment.commentText}" cols="100" rows="4" />
+
+                    <h:outputText value=""/>
+                    <h:commandButton id="submit" value=" Send it " action="#{commentService.storeComment}"/>
+                </h:panelGrid>
+            </h:form>
         </section>
     </ui:define>
 </ui:composition>

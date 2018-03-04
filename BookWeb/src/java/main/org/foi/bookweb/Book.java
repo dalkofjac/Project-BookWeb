@@ -1,6 +1,10 @@
 package main.org.foi.bookweb;
 
-public class Book {
+import javax.enterprise.context.SessionScoped;
+import java.io.Serializable;
+
+@SessionScoped
+public class Book implements Serializable {
     private int id;
     private String name;
     private int numberOfPages;
